@@ -1,5 +1,14 @@
 # Base URL: http://localhost:3000/api
 
 ### Test Get Owner
-GET http://localhost:3000/api/db
+GET http://localhost:3000/api/db/
+Content-Type: application/json
+
+
+### Test Get sections
+GET http://localhost:3000/api/db/sections
+Content-Type: application/json
+
+### Test Get section projects
+GET http://localhost:3000/api/db/sections/Projects
 Content-Type: application/json

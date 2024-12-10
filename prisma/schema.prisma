@@ -8,25 +8,24 @@ datasource db {
 }
 
 model User {
-  id          String  @id @default(cuid()) @map("_id")
-  name        String
-  email       String?
+  name        String  @id
+  email       String? @unique
   description String?
 }
 
 model Sections {
-  id          String        @id @default(cuid()) @map("_id")
-  title       String
-  subSections SubSections[]
+  title       String        @id
+  subSections SubSections[] @relation("SectionSubSections")
 }
 
 model SubSections {
   id          String    @id @default(cuid()) @map("_id")
   title       String
-  description String?
-  link        String?
+  description String?   
+  link        String?   
   start_date  DateTime?
   end_date    DateTime?
   sectionsId  String
-  sections    Sections  @relation(fields: [sectionsId], references: [id])
+
+  sections    Sections  @relation("SectionSubSections", fields: [sectionsId], references: [title], onDelete: Cascade)
 }
