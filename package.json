@@ -12,7 +12,7 @@
     "generator",
     "idm"
   ],
-  "author": "YD",
+  "author": "dehbiy",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^6.0.1",
