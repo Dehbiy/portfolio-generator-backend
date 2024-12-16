@@ -30,7 +30,7 @@ router.get("/sections/:title", async (req, res) => {
     const { title } = req.params;
     try {
         const section = await prisma.sections.findUnique({
-            where: { title },
+            where: { title }, // TODO: title is no more an id
             include: { subSections: true }, // Including subsections related to the section
         });
 
